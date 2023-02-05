@@ -115,11 +115,22 @@ main > div {
   position: relative;
 }
 
+
+main > div > img {
+  padding-left: 24px;
+}
+
 main > div > h1 {
   font-size: 72px;
   margin: 0;
   margin-top: 20px;
+  padding-left: 24px;
 }
+
+main > div > h2 {
+  padding-left: 24px;
+}
+
 
 main > div > div {
   width: 100%;
