@@ -66,20 +66,26 @@ function App() {
             {!isFirstRequest && <div>
               {questions.map((question, index) => {
                 return (
-                  <div key={question}>
+                  <div class="questionsAnswers" key={question}>
                     <p style={{color:'#7E7E7E'}}><b>Anon</b></p>
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
                     {answers[index] ? <div>
-                      <p>{answers[index]}</p>
-                    </div> : <div>
+                      <p style={{marginBottom: 30}} >{answers[index]}</p>
+                    </div> : <div >
                       <p className='loading-dots'><span>.</span><span>.</span><span>.</span></p>
                     </div>}
                   </div>
                 )
               })}
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </div>}
           </div>
+          <div className='white-fade'></div>
         </div>
       </main>
       
