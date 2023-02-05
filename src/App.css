@@ -1,8 +1,47 @@
+@font-face {
+  font-family: 'Aeonik';
+  src: url('Aeonik-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('Aeonik-RegularItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('Aeonik-Bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('Aeonik-BoldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('Aeonik-Light.otf') format('opentype');
+  font-style: normal;
+  font-weight: light;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('Aeonik-LightItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: light;
+}
+
 .App {
+  min-height: 600px;
   width: 720px;
   display: flex;
   flex-direction: column;
   min-width: 250px;
+  font-family: 'Aeonik', sans-serif;
 }
 
 @media only screen and (max-width: 720px) {
@@ -14,17 +53,19 @@
 /* Header */
 
 header {
-  width: 720px;
+  width: 60%;
   display: flex;
   justify-content: center;
   padding: 24px;
   position: absolute;
   top: 0;
+  left: 20%;
 }
 
 @media only screen and (max-width: 720px) {
   header {
     width: 100%;
+    left: unset;
   }
 }
 
@@ -62,9 +103,18 @@ main > div {
   padding: 24px;
 }
 
+main > div > h1 {
+  font-size: 72px;
+  margin: 0;
+  margin-top: 20px;
+}
+
 main > div > div {
   width: 100%;
   text-align: left;
+  font-size: 16px;
+  overflow-y: auto;
+  height: calc(100vh - 480px);
 }
 
 /* Footer */
