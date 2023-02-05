@@ -13,6 +13,13 @@ function App() {
   const [isFirstRequest, setIsFirstRequest] = useState(true)
 
   const generateResponse = (question, _questions, _answers) => {
+    if (isLoading) { return }
+    if (_questions) {
+      setQuestions(_questions)
+    }
+    if (_answers) {
+      setAnswers(_answers)
+    }
     if (_questions === undefined) { _questions = questions }
     if (_answers === undefined) { _answers = answers }
     setIsFirstRequest(() => false)
