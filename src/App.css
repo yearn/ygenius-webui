@@ -131,6 +131,18 @@ main > div > h2 {
   padding-left: 24px;
 }
 
+@media only screen and (max-width: 720px) {
+  main > div > img {
+    width: 80px;
+  }
+  main > div > h1 {
+    font-size: 36px;
+  }
+  main > div > h2 {
+    font-size: 20px;
+  }
+}
+
 
 main > div > div {
   width: 100%;
