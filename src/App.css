@@ -271,6 +271,14 @@ footer > div > input {
   font-size: 16px;
 }
 
+footer > div > input[type="text"], select {
+  outline: none;
+}
+
+footer > div > input[type="text"] {
+  outline: none;
+}
+
 footer > div > img {
   z-index: 1;
   position: relative;
