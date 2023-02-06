@@ -154,7 +154,7 @@ main > div > div {
   text-align: left;
   font-size: 16px;
   overflow-y: auto;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 424px);
   padding-right: 15px;
   /* z-index: 1; */
 }
@@ -162,6 +162,9 @@ main > div > div {
 @media only screen and (max-width: 750px) {
   main > div > div {
     padding-left: 24px;
+  }
+  .scrollable {
+    width: 90%;
   }
 }
 
@@ -196,6 +199,12 @@ main > div > .white-fade {
   left: 0;
   width: calc(100% - 5px);
   height: 100px;
+}
+
+@media only screen and (max-width: 750px) {
+  main > div > .white-fade {
+    width: calc(100% - 35px);
+  }
 }
 
 
