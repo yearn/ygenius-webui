@@ -68,7 +68,7 @@ function App() {
         <div>
           <img src={logo} />
           <h1>yGenius</h1>
-          <h2>Support Assistant</h2>
+          <h2>Get to know yearn without having to talk to a dev</h2>
           <div className='scrollable'>
             {!isFirstRequest && <div>
               {questions.map((question, index) => {
