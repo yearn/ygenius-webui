@@ -1,6 +1,6 @@
 {
   "name": "ygenius",
-  "homepage": "https://ygenius-webui.yearn.farm/",
+  "homepage": "https://ygenius.yearn.farm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
