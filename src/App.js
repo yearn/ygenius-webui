@@ -3,6 +3,9 @@ import logo from './logo.svg'
 import send from './send.svg'
 import './App.css'
 import { zip } from 'ramda'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
 
 function App() {
   const [input, setInput] = useState('')
@@ -34,11 +37,8 @@ function App() {
     }`)
     .then((response) => response.text())
     .then((data) => {
-      setAnswers(() => [..._answers, data.substring(1, data.length - 2).replace(/\\/g, '')])
-      // example wrong answer: The \"swappers\" thing.....
-      // make it not have \ before the ", so \"swappers\" -> "swappers"	
-      // console.log(data.replace(/\\n/g,'\n').replace(/^"|"$/g, '').replace(/"$/gm, ''))
-
+      setAnswers(() => [..._answers, data.substring(1, data.length - 2).replace(/\\n/g, '\n')])
+      
       setIsLoading(() => false)
     });
     setInput(() => '')
@@ -78,7 +78,7 @@ function App() {
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
                     {answers[index] ? <div>
-                      <p style={{marginBottom: 30}} >{answers[index]}</p>
+                      <pre style={{marginBottom: 30}} ><ReactMarkdown remarkPlugins={[remarkGfm]}>{answers[index]}</ReactMarkdown></pre>
                     </div> : <div >
                       <p className='loading-dots'><span>.</span><span>.</span><span>.</span></p>
                     </div>}

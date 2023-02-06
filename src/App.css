@@ -43,6 +43,17 @@
   font-family: 'Aeonik', sans-serif;
 }
 
+pre {
+  font-family: 'Aeonik', sans-serif;
+  font-size: 16px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+pre > p, pre > ul {
+  margin: 0;
+}
+
 @media only screen and (max-width: 720px) {
   .App {
     width: 100%;
@@ -150,8 +161,14 @@ main > div > div {
   font-size: 16px;
   overflow-y: auto;
   height: calc(100vh - 420px);
-  padding: 10px;
+  padding-right: 5px;
   /* z-index: 1; */
+}
+
+@media only screen and (max-width: 750px) {
+  main > div > div {
+    padding-left: 24px;
+  }
 }
 
 main > div > div::-webkit-scrollbar {
