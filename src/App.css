@@ -22,18 +22,6 @@
   font-style: italic;
   font-weight: bold;
 }
-@font-face {
-  font-family: 'Aeonik';
-  src: url('Aeonik-Light.otf') format('opentype');
-  font-style: normal;
-  font-weight: light;
-}
-@font-face {
-  font-family: 'Aeonik';
-  src: url('Aeonik-LightItalic.otf') format('opentype');
-  font-style: italic;
-  font-weight: light;
-}
 
 .App {
   width: 720px;
