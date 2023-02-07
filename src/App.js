@@ -131,6 +131,8 @@ function App() {
         <div>
           <img src={send} alt="" onClick={() => generateResponse(input)} />
           <input type="text" placeholder="Ask here" value={input} autoFocus
+            onFocus={(e) => e.target.placeholder = ""}
+            onBlur={(e) => e.target.placeholder = "Ask here"}
             onChange={e => { setInput(() => e.target.value.substring(0, 4000))}}
             onKeyDown={e => {
               if (e.key === 'Enter') {
