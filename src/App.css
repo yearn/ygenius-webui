@@ -311,6 +311,11 @@ footer > div > input {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
   position: relative;
   font-size: 16px;
+  placeholder-color: #9D9D9D;
+}
+
+footer > div > input::placeholder { 
+  color: #9D9D9D; 
 }
 
 footer > div > input[type="text"], select {
