@@ -319,10 +319,10 @@ footer > div > input[type="text"] {
 footer > div > img {
   z-index: 1;
   position: relative;
-  top: 60px;
+  top: 62px;
   left: 330px;
   width: 60px;
-  padding: 15px;
+  padding: 18px;
 }
 
 footer > div > img:hover {
@@ -334,6 +334,6 @@ footer > div > img:hover {
     position: absolute;
     left: unset;
     right: 23px;
-    top: 39px;
+    top: 41px;
   }
 }
