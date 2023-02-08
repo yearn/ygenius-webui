@@ -37,7 +37,7 @@ function App() {
     }`)
     .then((response) => response.text() )
     .then((data) => {
-      setAnswers(() => [..._answers, data.substring(1, data.length - 2).replace(/\\n/g, '\n')])
+      setAnswers(() => [..._answers, data.substring(1, data.length - 2).replace(/\\n/g, '\n').replaceAll("\u2019","'")])
       setIsLoading(() => false)
     });
     setInput(() => '')
