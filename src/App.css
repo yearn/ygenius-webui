@@ -314,6 +314,7 @@ footer > div > input[type="text"], select {
 
 footer > div > input[type="text"] {
   outline: none;
+  padding-right: 55px;
 }
 
 footer > div > img {
