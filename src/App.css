@@ -32,18 +32,18 @@
   font-weight: 500;
 }
 
-pre {
+/* pre {
   font-family: 'Aeonik', sans-serif;
   font-weight: 500;
   font-size: 16px;
   word-wrap: break-word;
   white-space: pre-wrap;
   line-height: 24px;
-}
+} */
 
-pre > p, pre > ul {
+/* pre > p, pre > ul, pre > li {
   margin: 0;
-}
+} */
 
 @media only screen and (max-width: 720px) {
   .App {

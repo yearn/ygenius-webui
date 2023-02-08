@@ -35,10 +35,9 @@ function App() {
         .map(([q, a]) => `Question: ${q}\nAnswer:${a}`).join('\n\n'))
         .substring(0, 4000)
     }`)
-    .then((response) => response.text())
+    .then((response) => response.text() )
     .then((data) => {
       setAnswers(() => [..._answers, data.substring(1, data.length - 2).replace(/\\n/g, '\n')])
-      
       setIsLoading(() => false)
     });
     setInput(() => '')
@@ -78,7 +77,9 @@ function App() {
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
                     {answers[index] ? <div>
-                      <pre style={{marginBottom: 30}} ><ReactMarkdown remarkPlugins={[remarkGfm]}>{answers[index]}</ReactMarkdown></pre>
+                      <p style={{marginBottom: 30}} >
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{answers[index]}</ReactMarkdown>
+                      </p>
                     </div> : <div >
                       <p className='loading-dots'><span>.</span><span>.</span><span>.</span></p>
                     </div>}
@@ -111,8 +112,6 @@ function App() {
               _questions = questions.slice(0, -1)
               _answers = answers.slice(0, -1)
             }
-
-            console.log(_questions, _answers)
 
             generateResponse(lastQuestion, _questions, _answers)
 
