@@ -28,7 +28,7 @@ function App() {
     setIsFirstRequest(() => false)
     setIsLoading(() => true)
     setQuestions(() => [..._questions, question])
-    fetch(`https://d1c4-34-125-75-1.ngrok.io/ask?query=${
+    fetch(`https://fb1a-2804-431-c7f3-9713-79d5-397b-cf1d-c117.sa.ngrok.io/ask?query=${
       encodeURIComponent(question.substring(0, 4000))
     }&history=${
       encodeURIComponent(zip(_questions, _answers)
