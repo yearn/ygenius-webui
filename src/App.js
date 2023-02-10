@@ -77,9 +77,9 @@ function App() {
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
                     {answers[index] ? <div>
-                      <p style={{marginBottom: 30}} >
+                      <pre style={{marginBottom: 30}} >
                         <ReactMarkdown remarkPlugins={[remarkGfm]}>{answers[index]}</ReactMarkdown>
-                      </p>
+                      </pre>
                     </div> : <div >
                       <p className='loading-dots'><span>.</span><span>.</span><span>.</span></p>
                     </div>}
