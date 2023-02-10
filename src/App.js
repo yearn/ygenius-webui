@@ -37,7 +37,7 @@ function App() {
     }`)
     .then((response) => response.json() )
     .then((data) => {
-      setAnswers(() => [..._answers, data.substring(1, data.length - 2)])
+      setAnswers(() => [..._answers, data])
       setIsLoading(() => false)
     });
     setInput(() => '')
