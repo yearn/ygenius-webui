@@ -39,6 +39,10 @@ function App() {
     .then((data) => {
       setAnswers(() => [..._answers, data])
       setIsLoading(() => false)
+    })
+		.catch((data) => {
+      setAnswers(() => [..._answers, 'yGenius did not respond. Try regenerate response in a minute.'])
+      setIsLoading(() => false)
     });
     setInput(() => '')
   }
