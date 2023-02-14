@@ -32,7 +32,7 @@ function App() {
       encodeURIComponent(question.substring(0, 4000))
     }&history=${
       encodeURIComponent(zip(_questions, _answers)
-        .map(([q, a]) => `Question: ${q}\nAnswer:${a}`).join('\n\n'))
+        .map(([q, a]) => `Prompt: ${q}\nResult: ${a}`).join('\n\n'))
         .substring(0, 4000)
     }`)
     .then((response) => response.json() )
