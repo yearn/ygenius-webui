@@ -28,7 +28,7 @@ function App() {
     setIsFirstRequest(() => false)
     setIsLoading(() => true)
     setQuestions(() => [..._questions, question])
-    fetch(`https://a2c5-2804-14d-5c54-585d-91c6-60b9-b197-2833.sa.ngrok.io/ask?query=${
+    fetch(`https://ygenius-brain.yearn.network/ask?query=${
       encodeURIComponent(question.substring(0, 4000))
     }&history=${
       encodeURIComponent(zip(_questions, _answers)
