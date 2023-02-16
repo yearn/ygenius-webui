@@ -215,7 +215,7 @@ main > div > .white-fade {
 
 .loading-dots {
   animation: dots 0.5s linear infinite;
-  coloer: #0657F9
+  color: #0657F9
 }
 
 @keyframes dots {
@@ -306,7 +306,6 @@ footer > div > input {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
   position: relative;
   font-size: 16px;
-  placeholder-color: #9D9D9D;
 }
 
 footer > div > input::placeholder { 
