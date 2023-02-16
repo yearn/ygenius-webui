@@ -58,6 +58,7 @@ pre > p {
 /* Header */
 
 header {
+  z-index: 1;
   width: 60%;
   display: flex;
   justify-content: center;
