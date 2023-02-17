@@ -63,7 +63,7 @@ function App() {
           <a target="_blank" href="https://yearn.finance/">yearn.fi</a>
         </div>
         <div>
-          <a target="_blank" href="https://docs.yearn.finance">docs.yearn</a>
+          <a target="_blank" href="https://github.com/yearn/ygenius-brain">source</a>
         </div>
       </header>
       
