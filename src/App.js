@@ -132,7 +132,6 @@ function App() {
           </button>
         </div>
         <div className='inputWrapper'>
-          <IconSend className="send" onClick={() => generateResponse(input)} />
           <input type="text" placeholder="Ask here" value={input} autoFocus
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Ask here"}
@@ -143,6 +142,7 @@ function App() {
               }
             }}
           />
+          <IconSend className="send" onClick={() => generateResponse(input)} />
         </div>
         <span>
           GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
