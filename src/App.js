@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import logo from './logo.svg'
-import send from './send.svg'
 import './App.css'
 import { zip } from 'ramda'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import IconSend from './components/icons/IconSend'
 
 
 function App() {
@@ -131,8 +131,8 @@ function App() {
             Clear All
           </a>
         </div>
-        <div>
-          <img src={send} alt="" onClick={() => generateResponse(input)} />
+        <div className='inputWrapper'>
+          <IconSend className="send" onClick={() => generateResponse(input)} />
           <input type="text" placeholder="Ask here" value={input} autoFocus
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Ask here"}
