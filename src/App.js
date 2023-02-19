@@ -60,23 +60,23 @@ function App() {
     <div className="App">
       <header>
         <div>
-          <a target="_blank" href="https://yearn.finance/">yearn.fi</a>
+          <a target="_blank" href="https://yearn.finance/" rel="noreferrer">yearn.fi</a>
         </div>
         <div>
-          <a target="_blank" href="https://github.com/yearn/ygenius-brain">source</a>
+          <a target="_blank" href="https://github.com/yearn/ygenius-brain" rel="noreferrer">source</a>
         </div>
       </header>
       
       <main>
         <div>
-          <img src={logo} />
+          <img src={logo} alt='Logo' />
           <h1>yGenius</h1>
           <h2>Get to know yearn without having to talk to a dev</h2>
           <div className='scrollable'>
             {!isFirstRequest && <div>
               {questions.map((question, index) => {
                 return (
-                  <div class="questionsAnswers" key={question}>
+                  <div className="questionsAnswers" key={question}>
                     <p style={{color:'#7E7E7E'}}><b>Anon</b></p>
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
@@ -103,7 +103,7 @@ function App() {
       
       <footer>
         <div className="buttons">
-          <a onClick={() => {
+          <button onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             const lastQuestion = questions[questions.length - 1]
             let _questions
@@ -121,15 +121,15 @@ function App() {
 
           }}>
             Regenerate Response
-          </a>
-          <a style={{marginLeft: 20}} onClick={() => {
+          </button>
+          <button style={{marginLeft: 20}} onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             setAnswers([])
             setQuestions([])
             setIsFirstRequest(() => true)
           }}>
             Clear All
-          </a>
+          </button>
         </div>
         <div className='inputWrapper'>
           <IconSend className="send" onClick={() => generateResponse(input)} />
