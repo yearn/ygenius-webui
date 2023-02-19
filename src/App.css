@@ -137,10 +137,6 @@ main > div > h2 {
 }
 
 @media only screen and (max-width: 720px) {
-/* Unnecessary media querie property */
-  /* main > div > img {
-    width: 80px;
-  } */
   main > div > h1 {
     font-size: 36px;
   }
@@ -346,12 +342,3 @@ footer > div  .send:hover {
   cursor: pointer;
 }
 
-/* Unnecessary media querie property */
-/* @media only screen and (max-width: 750px) {
-  footer > div > img {
-    position: absolute;
-    left: unset;
-    right: 23px;
-    top: 41px;
-  } 
-}*/
