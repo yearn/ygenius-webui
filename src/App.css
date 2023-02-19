@@ -161,13 +161,16 @@ main > div > div {
   /* z-index: 1; */
 } 
 
+.scrollable {
+z-index: 1; /*Fix visibility in Mozilla browser*/
+}
+
 @media only screen and (max-width: 750px) {
   main > div > div {
     padding-left: 24px;
   }
   .scrollable {
     width: 90%;
-    z-index: 1; /*Fix visibility in Mozilla browser*/
   }
 }
 
