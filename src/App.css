@@ -45,10 +45,6 @@ pre > p {
   margin: 0;
 }
 
-/* pre > p, pre > ul, pre > li {
-  margin: 0;
-} */
-
 @media only screen and (max-width: 720px) {
   .App {
     width: 100%;
@@ -158,7 +154,6 @@ main > div > div {
   overflow-y: auto;
   height: calc(100vh - 424px);
   padding-right: 15px;
-  /* z-index: 1; */
 } 
 
 .scrollable {
@@ -184,7 +179,6 @@ main > div > div::-webkit-scrollbar-thumb {
   border-radius: 2px;
 }
 main > div > div::-webkit-scrollbar-track {
-  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: #ebebeb;
   border-radius: 2px;
 }
@@ -192,10 +186,9 @@ main > div > div {
   scrollbar-width: thin;
   scrollbar-color: #0657F9 #ebebeb;
   border-radius: 2px;
-  /* line-height: 16px; */
 }
 
-main > div > div > .questionsAnswers {
+main > div > div > .questions-answers {
   margin-bottom: 40px;
 }
 main > div > .white-fade {
@@ -212,7 +205,6 @@ main > div > .white-fade {
     width: calc(100% - 35px);
   }
 }
-
 
 .loading-dots {
   animation: dots 0.5s linear infinite;
@@ -261,7 +253,6 @@ footer {
 }
 
 .buttons {
-  /* position: relative; */
   justify-content: center;
   margin-bottom: 1rem;
   top: 30px
@@ -273,8 +264,6 @@ footer > div > button {
   background-color: #F4F4F4;
   padding: 10px;
   margin: 0;
-  /* position: relative; */
-  /* top: 35px; */
   font-size: 14px;
 }
 
@@ -284,7 +273,6 @@ footer > div > button:hover {
 
 @media only screen and (max-width: 750px) {
   .buttons {
-    /* position: relative; */
     top: -32px
   }
 }
@@ -301,13 +289,12 @@ footer > div {
   max-width: 720px;
 }
 
-.inputWrapper {
+.input-wrapper {
   position:relative;
   width: 100%;
 }
 
 footer > div > input {
-  /* margin-bottom: 32px; */
   padding: 20px;
   width: 100%;
   max-width: 720px;
@@ -337,7 +324,6 @@ footer > div  .send {
   left: unset;
   right: 12px;
   width: 60px;
-  transform: translateY(-50%);
   transform: translateY(-50%);
 }
 

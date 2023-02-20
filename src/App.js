@@ -57,7 +57,7 @@ function App() {
   }, [questions, answers]);
 
   return (
-    <div className="App">
+    <div className='App'>
       <header>
         <div>
           <a target="_blank" href="https://yearn.finance/" rel="noreferrer">yearn.fi</a>
@@ -76,7 +76,7 @@ function App() {
             {!isFirstRequest && <div>
               {questions.map((question, index) => {
                 return (
-                  <div className="questionsAnswers" key={question}>
+                  <div className='questions-answers' key={question}>
                     <p style={{color:'#7E7E7E'}}><b>Anon</b></p>
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
@@ -102,7 +102,7 @@ function App() {
       </main>
       
       <footer>
-        <div className="buttons">
+        <div className='buttons'>
           <button onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             const lastQuestion = questions[questions.length - 1]
@@ -131,7 +131,7 @@ function App() {
             Clear All
           </button>
         </div>
-        <div className='inputWrapper'>
+        <div className='input-wrapper'>
           <input type="text" placeholder="Ask here" value={input} autoFocus
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Ask here"}
@@ -142,7 +142,7 @@ function App() {
               }
             }}
           />
-          <IconSend className="send" onClick={() => generateResponse(input)} />
+          <IconSend className='send' onClick={() => generateResponse(input)} />
         </div>
         <span>
           GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
