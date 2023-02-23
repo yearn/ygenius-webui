@@ -59,15 +59,15 @@ function App() {
 
   return (
     <div className='App'>
-      <header>
+      <div className='header'>
         <div>
           <a target="_blank" href="https://yearn.finance/" rel="noreferrer">yearn.fi</a>
         </div>
         <div>
           <a target="_blank" href="https://github.com/yearn/ygenius-brain" rel="noreferrer">source</a>
         </div>
-      </header>
-      
+      </div>
+
       <main>
         <div>
           <img src={logo} alt='Logo' />
@@ -150,7 +150,7 @@ function App() {
           <span>
             GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
           </span>
-          <IconThemeDark className="iconDark" /> 
+          <IconThemeDark className='iconDark'/> 
         </div>
       </footer>
     </div>

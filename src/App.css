@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Aeonik';
   src: url('Aeonik-Regular.otf') format('opentype');
@@ -53,7 +57,7 @@ pre > p {
 
 /* Header */
 
-header {
+.header {
   z-index: 1;
   width: 60%;
   display: flex;
@@ -65,28 +69,28 @@ header {
 }
 
 @media only screen and (max-width: 720px) {
-  header {
+.header {
     width: 100%;
     left: unset;
   }
 }
 
-header > div {
+.header > div {
   width: 50%;
   font-size: 14px;
 }
 
-header > div > a {
+.header > div > a {
   text-decoration: none;
   color: #7E7E7E;
   padding: 10px;
 }
 
-header > div > a:hover {
+.header > div > a:hover {
   cursor: pointer;
 }
 
-header > div:first-child {
+.header > div:first-child {
   text-align: left;
   position: absolute;
   top: 0;
@@ -94,7 +98,7 @@ header > div:first-child {
   padding: 24px;
 }
 
-header > div:last-child{
+.header > div:last-child{
   text-align: right;
   position: absolute;
   top: 0;
@@ -284,6 +288,7 @@ footer > div > span {
 footer .iconDark{
   margin-left: 10px;
   margin-right: 10px;
+  color: #7E7E7E;
 }
 
 .footer-details {
