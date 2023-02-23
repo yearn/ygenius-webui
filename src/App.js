@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import logo from './logo.svg'
-import send from './send.svg'
 import './App.css'
 import { zip } from 'ramda'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import IconSend from './components/icons/IconSend'
 
 
 function App() {
@@ -57,26 +57,26 @@ function App() {
   }, [questions, answers]);
 
   return (
-    <div className="App">
+    <div className='App'>
       <header>
         <div>
-          <a target="_blank" href="https://yearn.finance/">yearn.fi</a>
+          <a target="_blank" href="https://yearn.finance/" rel="noreferrer">yearn.fi</a>
         </div>
         <div>
-          <a target="_blank" href="https://github.com/yearn/ygenius-brain">source</a>
+          <a target="_blank" href="https://github.com/yearn/ygenius-brain" rel="noreferrer">source</a>
         </div>
       </header>
       
       <main>
         <div>
-          <img src={logo} />
+          <img src={logo} alt='Logo' />
           <h1>yGenius</h1>
           <h2>Get to know yearn without having to talk to a dev</h2>
           <div className='scrollable'>
             {!isFirstRequest && <div>
               {questions.map((question, index) => {
                 return (
-                  <div class="questionsAnswers" key={question}>
+                  <div className='questions-answers' key={question}>
                     <p style={{color:'#7E7E7E'}}><b>Anon</b></p>
                     <p>{question}</p>
                     <p style={{color:'#0657F9', marginTop: 30}}><b>yGenius</b></p>
@@ -102,8 +102,8 @@ function App() {
       </main>
       
       <footer>
-        <div className="buttons">
-          <a onClick={() => {
+        <div className='buttons'>
+          <button onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             const lastQuestion = questions[questions.length - 1]
             let _questions
@@ -121,18 +121,17 @@ function App() {
 
           }}>
             Regenerate Response
-          </a>
-          <a style={{marginLeft: 20}} onClick={() => {
+          </button>
+          <button style={{marginLeft: 20}} onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             setAnswers([])
             setQuestions([])
             setIsFirstRequest(() => true)
           }}>
             Clear All
-          </a>
+          </button>
         </div>
-        <div>
-          <img src={send} alt="" onClick={() => generateResponse(input)} />
+        <div className='input-wrapper'>
           <input type="text" placeholder="Ask here" value={input} autoFocus
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Ask here"}
@@ -143,6 +142,7 @@ function App() {
               }
             }}
           />
+          <IconSend className='send' onClick={() => generateResponse(input)} />
         </div>
         <span>
           GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.

@@ -45,10 +45,6 @@ pre > p {
   margin: 0;
 }
 
-/* pre > p, pre > ul, pre > li {
-  margin: 0;
-} */
-
 @media only screen and (max-width: 720px) {
   .App {
     width: 100%;
@@ -137,9 +133,6 @@ main > div > h2 {
 }
 
 @media only screen and (max-width: 720px) {
-  main > div > img {
-    width: 80px;
-  }
   main > div > h1 {
     font-size: 36px;
   }
@@ -161,7 +154,10 @@ main > div > div {
   overflow-y: auto;
   height: calc(100vh - 424px);
   padding-right: 15px;
-  /* z-index: 1; */
+} 
+
+.scrollable {
+z-index: 1; /*Fix visibility in Mozilla browser*/
 }
 
 @media only screen and (max-width: 750px) {
@@ -183,7 +179,6 @@ main > div > div::-webkit-scrollbar-thumb {
   border-radius: 2px;
 }
 main > div > div::-webkit-scrollbar-track {
-  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: #ebebeb;
   border-radius: 2px;
 }
@@ -191,10 +186,9 @@ main > div > div {
   scrollbar-width: thin;
   scrollbar-color: #0657F9 #ebebeb;
   border-radius: 2px;
-  /* line-height: 16px; */
 }
 
-main > div > div > .questionsAnswers {
+main > div > div > .questions-answers {
   margin-bottom: 40px;
 }
 main > div > .white-fade {
@@ -211,7 +205,6 @@ main > div > .white-fade {
     width: calc(100% - 35px);
   }
 }
-
 
 .loading-dots {
   animation: dots 0.5s linear infinite;
@@ -260,44 +253,48 @@ footer {
 }
 
 .buttons {
-  position: relative;
+  justify-content: center;
+  margin-bottom: 1rem;
   top: 30px
 }
 
-footer > div > a {
+footer > div > button {
   border: none;
   color: #5B5B5B;
   background-color: #F4F4F4;
   padding: 10px;
   margin: 0;
-  /* position: relative; */
-  /* top: 35px; */
   font-size: 14px;
 }
 
-footer > div > a:hover {
+footer > div > button:hover {
   cursor: pointer;
 }
 
 @media only screen and (max-width: 750px) {
   .buttons {
-    position: relative;
     top: -32px
   }
 }
 
 footer > span {
+  margin-top: 32px;
   font-size: 12px;
   color: #5B5B5B;
 }
 
 footer > div {
+  display: flex;
   width: 100%;
   max-width: 720px;
 }
 
+.input-wrapper {
+  position:relative;
+  width: 100%;
+}
+
 footer > div > input {
-  margin-bottom: 32px;
   padding: 20px;
   width: 100%;
   max-width: 720px;
@@ -321,24 +318,17 @@ footer > div > input[type="text"] {
   padding-right: 55px;
 }
 
-footer > div > img {
-  z-index: 1;
-  position: relative;
-  top: 62px;
-  left: 330px;
+footer > div  .send {
+  position: absolute;
+  top: 50%;
+  left: unset;
+  right: 0;
   width: 60px;
   padding: 18px;
+  transform: translateY(-50%);
 }
 
-footer > div > img:hover {
+footer > div  .send:hover {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 750px) {
-  footer > div > img {
-    position: absolute;
-    left: unset;
-    right: 23px;
-    top: 41px;
-  }
-}
