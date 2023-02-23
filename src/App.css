@@ -322,8 +322,9 @@ footer > div  .send {
   position: absolute;
   top: 50%;
   left: unset;
-  right: 12px;
+  right: 0;
   width: 60px;
+  padding: 1rem;
   transform: translateY(-50%);
 }
 
