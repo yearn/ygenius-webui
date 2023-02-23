@@ -27,6 +27,12 @@
   font-weight: bold;
 }
 
+/* Global Dark Mode */
+
+html.dark {
+	background: rgb(38, 38, 38);
+}
+
 .App {
   width: 720px;
   display: flex;
@@ -127,12 +133,14 @@ main > div > img {
 }
 
 main > div > h1 {
+  font-weight: 700;
   font-size: 65px;
   margin: 0;
   margin-top: 20px;
 }
 
 main > div > h2 {
+  font-weight: 700;
   font-size: 18px;
 }
 
@@ -152,24 +160,26 @@ main > div > h2 {
 }
 
 main > div > div {
-  width: 100%;
   text-align: left;
   font-size: 16px;
   overflow-y: auto;
-  height: calc(100vh - 424px);
+  height: 30vh;
   padding-right: 15px;
 } 
 
 .scrollable {
+margin-top: 1rem;
+padding-left: 15px;
 z-index: 1; /*Fix visibility in Mozilla browser*/
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 720px) {
   main > div > div {
-    padding-left: 24px;
+  height: 35vh;
+  padding-left: 24px;
   }
   .scrollable {
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -202,11 +212,27 @@ main > div > .white-fade {
   left: 0;
   width: calc(100% - 5px);
   height: 100px;
+  z-index: 1; 
 }
 
-@media only screen and (max-width: 750px) {
+/* Fade effect - Dark Mode */
+
+main > div > .dark-fade {
+  background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgb(80 80 80) 63%, rgb(38 38 38) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 15px);
+  height: 100px;
+  z-index: 1; 
+}
+
+@media only screen and (max-width: 720px) {
   main > div > .white-fade {
-    width: calc(100% - 35px);
+    width: 95%;
+  }
+  main > div > .dark-fade {
+    width: 95%;
   }
 }
 
@@ -275,7 +301,7 @@ footer > div > button:hover {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 720px) {
   .buttons {
     top: -32px
   }
@@ -289,6 +315,7 @@ footer .iconDark{
   margin-left: 10px;
   margin-right: 10px;
   color: #7E7E7E;
+  cursor: pointer;
 }
 
 .footer-details {
