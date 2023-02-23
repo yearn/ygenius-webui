@@ -277,10 +277,21 @@ footer > div > button:hover {
   }
 }
 
-footer > span {
-  margin-top: 32px;
+footer > div > span {
   font-size: 12px;
   color: #5B5B5B;
+}
+footer .iconDark{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+  align-items: center;
+  margin-top: 32px;
 }
 
 footer > div {

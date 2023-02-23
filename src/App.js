@@ -5,6 +5,7 @@ import { zip } from 'ramda'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import IconSend from './components/icons/IconSend'
+import IconThemeDark from './components/icons/IconThemeDark'
 
 
 function App() {
@@ -144,9 +145,13 @@ function App() {
           />
           <IconSend className='send' onClick={() => generateResponse(input)} />
         </div>
-        <span>
-          GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
-        </span>
+        <div className='footer-details'> 
+        <div>{''}</div>
+          <span>
+            GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
+          </span>
+          <IconThemeDark className="iconDark" /> 
+        </div>
       </footer>
     </div>
   )
