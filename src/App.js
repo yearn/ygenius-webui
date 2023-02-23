@@ -28,7 +28,7 @@ function App() {
     setIsFirstRequest(() => false)
     setIsLoading(() => true)
     setQuestions(() => [..._questions, question])
-    fetch(`https://ygenius-brain-git-test.yearn.farm/ask?query=${
+    fetch(`https://ygenius-brain.yearn.network/ask?query=${
       encodeURIComponent(question.substring(0, 4000))
     }&history=${
       _answers.length === 0
