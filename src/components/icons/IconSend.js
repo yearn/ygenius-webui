@@ -3,8 +3,8 @@ import React from 'react'
 function IconSend (props) {
   
   const defaultProps = {
-		width: 24,
-		height: 24
+		width: 66,
+		height: 66
 	};
 
   props = {...defaultProps, ...props};
