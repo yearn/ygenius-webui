@@ -28,12 +28,14 @@ function App() {
     setIsFirstRequest(() => false)
     setIsLoading(() => true)
     setQuestions(() => [..._questions, question])
-    fetch(`https://ygenius-brain.yearn.network/ask?query=${
+    fetch(`https://ygenius-brain-git-test.yearn.farm/ask?query=${
       encodeURIComponent(question.substring(0, 4000))
     }&history=${
-      encodeURIComponent(zip(_questions, _answers)
-        .map(([q, a]) => `Anon:\n${q}\nYou:\n${a}`).join('\n\n'))
-        .substring(0, 4000)
+      _answers.length === 0
+        ? 'none'
+        : encodeURIComponent(zip(_questions, _answers)
+          .map(([q, a]) => `Anon:\n${q}\nYou:\n${a}`).join('\n\n'))
+          .substring(0, 4000)
     }`)
     .then((response) => response.json() )
     .then((data) => {
