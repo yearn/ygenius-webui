@@ -106,7 +106,7 @@ function App() {
       
       <footer>
         <div className='buttons'>
-          <button onClick={() => {
+          <button className='dark:text-white dark:bg-blue-700'onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             const lastQuestion = questions[questions.length - 1]
             let _questions
@@ -125,7 +125,7 @@ function App() {
           }}>
             Regenerate Response
           </button>
-          <button style={{marginLeft: 20}} onClick={() => {
+          <button className='ml-5 dark:text-white dark:bg-blue-700' onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             setAnswers([])
             setQuestions([])
@@ -135,7 +135,7 @@ function App() {
           </button>
         </div>
         <div className='input-wrapper'>
-          <input type="text" placeholder="Ask here" value={input} autoFocus
+          <input className={theme === 'dark'?'shadow-dark' : 'shadow-light'} type="text" placeholder="Ask here" value={input} autoFocus
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Ask here"}
             onChange={e => { setInput(() => e.target.value.substring(0, 4000))}}
