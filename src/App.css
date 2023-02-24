@@ -235,7 +235,7 @@ main > div > .dark-fade {
   main > div > .dark-fade {
     width: 92%;
     margin-left: 1.5rem;
-    bottom: -1;
+    bottom: -1px;
   }
 }
 
@@ -354,10 +354,17 @@ footer > div > input {
   width: 100%;
   max-width: 720px;
   border: none;
-  background: #F4F4F4;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
   position: relative;
   font-size: 16px;
+  background: #F4F4F4;
+}
+
+footer .shadow-light {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+footer .shadow-dark {
+  box-shadow: 0px 8px 16px rgb(248 245 245 / 16%);
 }
 
 footer > div > input::placeholder { 
