@@ -5,9 +5,12 @@ import { zip } from 'ramda'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import IconSend from './components/icons/IconSend'
-
+import IconThemeDark from './components/icons/IconThemeDark'
+import useUI from './contexts/useUI'
 
 function App() {
+  const	{theme, switchTheme} = useUI();
+
   const [input, setInput] = useState('')
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState([])
@@ -53,28 +56,28 @@ function App() {
     const div = document.querySelector(".scrollable");
     div.scrollTop = div.scrollHeight - div.clientHeight;
   };
-  
+
   useEffect(() => {
     scrollToBottom();
   }, [questions, answers]);
 
   return (
     <div className='App'>
-      <header>
+      <div className='header'>
         <div>
-          <a target="_blank" href="https://yearn.finance/" rel="noreferrer">yearn.fi</a>
+          <a className='dark:text-white' target="_blank" href="https://yearn.finance/" rel="noreferrer">yearn.fi</a>
         </div>
         <div>
-          <a target="_blank" href="https://github.com/yearn/ygenius-brain" rel="noreferrer">source</a>
+          <a className='dark:text-white dark:hover:text-gray-400' target="_blank" href="https://github.com/yearn/ygenius-brain" rel="noreferrer">source</a>
         </div>
-      </header>
-      
+      </div>
+
       <main>
-        <div>
+        <div className='dark:text-white'>
           <img src={logo} alt='Logo' />
           <h1>yGenius</h1>
           <h2>Get to know yearn without having to talk to a dev</h2>
-          <div className='scrollable'>
+        <div className='scrollable'>
             {!isFirstRequest && <div>
               {questions.map((question, index) => {
                 return (
@@ -98,14 +101,14 @@ function App() {
               <br />
               <br />
             </div>}
-          </div>
-          <div className='white-fade'></div>
+        </div>
+          {theme === 'dark' ? <div className='dark-fade'></div> : <div className='white-fade'></div> }
         </div>
       </main>
       
       <footer>
         <div className='buttons'>
-          <button onClick={() => {
+          <button className='dark:text-white dark:bg-blue-700'onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             const lastQuestion = questions[questions.length - 1]
             let _questions
@@ -124,7 +127,7 @@ function App() {
           }}>
             Regenerate Response
           </button>
-          <button style={{marginLeft: 20}} onClick={() => {
+          <button className='ml-5 dark:text-white dark:bg-blue-700' onClick={() => {
             if (isLoading || answers.length === 0 ) { return }
             setAnswers([])
             setQuestions([])
@@ -134,7 +137,7 @@ function App() {
           </button>
         </div>
         <div className='input-wrapper'>
-          <input type="text" placeholder="Ask here" value={input} autoFocus
+          <input className={theme === 'dark'?'shadow-dark' : 'shadow-light'} type="text" placeholder="Ask here" value={input} autoFocus
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Ask here"}
             onChange={e => { setInput(() => e.target.value.substring(0, 4000))}}
@@ -146,9 +149,15 @@ function App() {
           />
           <IconSend className='send' onClick={() => generateResponse(input)} />
         </div>
-        <span>
-          GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
-        </span>
+        <div className='footer-details'> 
+        <div>{''}</div>
+          <span className='dark:text-white'>
+            GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
+          </span>
+           <IconThemeDark 
+           className={'iconDark dark:text-white'}
+           onClick={switchTheme}/>
+        </div>
       </footer>
     </div>
   )
