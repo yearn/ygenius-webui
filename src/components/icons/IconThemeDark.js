@@ -2,8 +2,8 @@ import	React	from	'react';
 
 function	IconThemeDark (props) {
     const defaultProps = {
-        width: 18,
-        height: 18,
+        width: 20,
+        height: 20,
     };
     
     props = {...defaultProps, ...props};
