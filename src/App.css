@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Aeonik';
   src: url('Aeonik-Regular.otf') format('opentype');
@@ -21,6 +25,12 @@
   src: url('Aeonik-BoldItalic.otf') format('opentype');
   font-style: italic;
   font-weight: bold;
+}
+
+/* Global Dark Mode */
+
+html.dark {
+	background: rgb(38, 38, 38);
 }
 
 .App {
@@ -53,7 +63,7 @@ pre > p {
 
 /* Header */
 
-header {
+.header {
   z-index: 1;
   width: 60%;
   display: flex;
@@ -65,28 +75,28 @@ header {
 }
 
 @media only screen and (max-width: 720px) {
-  header {
+.header {
     width: 100%;
     left: unset;
   }
 }
 
-header > div {
+.header > div {
   width: 50%;
   font-size: 14px;
 }
 
-header > div > a {
+.header > div > a {
   text-decoration: none;
   color: #7E7E7E;
   padding: 10px;
 }
 
-header > div > a:hover {
+.header > div > a:hover {
   cursor: pointer;
 }
 
-header > div:first-child {
+.header > div:first-child {
   text-align: left;
   position: absolute;
   top: 0;
@@ -94,7 +104,7 @@ header > div:first-child {
   padding: 24px;
 }
 
-header > div:last-child{
+.header > div:last-child{
   text-align: right;
   position: absolute;
   top: 0;
@@ -123,12 +133,14 @@ main > div > img {
 }
 
 main > div > h1 {
+  font-weight: 700;
   font-size: 65px;
   margin: 0;
   margin-top: 20px;
 }
 
 main > div > h2 {
+  font-weight: 700;
   font-size: 18px;
 }
 
@@ -152,20 +164,22 @@ main > div > div {
   text-align: left;
   font-size: 16px;
   overflow-y: auto;
-  height: calc(100vh - 424px);
+  height: 30vh;
   padding-right: 15px;
 } 
 
 .scrollable {
+margin-top: 1rem;
+padding-left: 15px;
 z-index: 1; /*Fix visibility in Mozilla browser*/
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 720px) {
   main > div > div {
-    padding-left: 24px;
+  height: 36vh;
   }
   .scrollable {
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -196,13 +210,42 @@ main > div > .white-fade {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: calc(100% - 5px);
+  width: calc(100% - 15px);
   height: 100px;
+  z-index: 1; 
 }
 
-@media only screen and (max-width: 750px) {
+/* Fade effect - Dark Mode */
+
+main > div > .dark-fade {
+  background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgb(80 80 80) 63%, rgb(38 38 38) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 15px);
+  height: 100px;
+  z-index: 1; 
+}
+
+@media only screen and (max-width: 720px) {
   main > div > .white-fade {
-    width: calc(100% - 35px);
+    width: 92%;
+    margin-left: 1.5rem;
+    bottom: -1;
+  }
+  main > div > .dark-fade {
+    width: 92%;
+    margin-left: 1.5rem;
+    bottom: -1px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main > div > .white-fade {
+    width: 90%;
+  }
+  main > div > .dark-fade {
+    width: 90%;
   }
 }
 
@@ -250,6 +293,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 
 .buttons {
@@ -265,23 +309,35 @@ footer > div > button {
   padding: 10px;
   margin: 0;
   font-size: 14px;
-  z-index: 1;
 }
 
 footer > div > button:hover {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 720px) {
   .buttons {
     top: -32px
   }
 }
 
-footer > span {
-  margin-top: 32px;
+footer > div > span {
   font-size: 12px;
   color: #5B5B5B;
+}
+footer .iconDark{
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #7E7E7E;
+  cursor: pointer;
+}
+
+.footer-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+  align-items: center;
+  margin-top: 32px;
 }
 
 footer > div {
@@ -300,10 +356,17 @@ footer > div > input {
   width: 100%;
   max-width: 720px;
   border: none;
-  background: #F4F4F4;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
   position: relative;
   font-size: 16px;
+  background: #F4F4F4;
+}
+
+footer .shadow-light {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+footer .shadow-dark {
+  box-shadow: 0px 8px 16px rgb(248 245 245 / 16%);
 }
 
 footer > div > input::placeholder { 
