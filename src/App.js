@@ -147,7 +147,7 @@ function App() {
           <IconSend className='send' onClick={() => generateResponse(input)} />
         </div>
         <span>
-          GPT Index powered by yearn devdocs, articles, proposals, onchain data, and support channel history.
+          GPT-powered chatbot that can search yearn documentation, articles, and governance proposals.
         </span>
       </footer>
     </div>
