@@ -34,7 +34,7 @@ function App() {
       _answers.length === 0
         ? 'none'
         : encodeURIComponent(zip(_questions, _answers)
-          .map(([q, a]) => `Anon:\n${q}\nYou:\n${a}`).join('\n\n'))
+          .map(([q, a]) => `Anon:\n${q}\nAI:\n${a}`).join('\n\n'))
           .substring(0, 4000)
     }`)
     .then((response) => response.json() )
